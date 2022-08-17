@@ -24,18 +24,6 @@
 2. Design the Class System
 Consider diagramming out the classes and their relationships. Take care to focus on the details you see as important, not everything. The diagram below uses asciiflow.com but you could also use excalidraw.com, draw.io, or miro.com
 
-need a diary (list)
-need to add to the diary
-need to list all diary entries
-check how long to read a diary entry based on spare time
-todo list
-add to list
-phone list
-add to list
-need to view all phone numbers
-
-
-
 
 
             ┌─────────────────────┐            ┌─────────────────────┐
@@ -62,9 +50,60 @@ need to view all phone numbers
             │                      │            │                     │
             └──────────────────────┘            └─────────────────────┘
 
+class Diary
+  def initialize
+  list = []
+  end
 
+  def add(diary_entry)
+  end
 
+  def list_entries
+  end
 
+  def reading_time(count_words, wpm, time)
+  end
+
+end
+
+class DiaryEntry
+  def initialize(title, content)
+    ...
+  end
+
+  def title
+  end
+
+  def contents
+  end
+
+  def count_words
+  end
+end 
+
+class TodoList
+  def initialize(task)
+    list = []
+  end 
+
+  def add_task
+  end
+
+  def view_tasks
+  end
+end
+
+class PhoneNumbers
+  def initialize
+  list = []
+  end
+
+  def add_phone_number
+  end
+
+  def view_phone_number
+  end
+end
 
 
 
