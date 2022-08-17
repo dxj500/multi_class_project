@@ -29,7 +29,7 @@ Consider diagramming out the classes and their relationships. Take care to focus
             ┌─────────────────────┐            ┌─────────────────────┐
             │ Diary               │            │   DiaryEntry        │
             │                     │            │                     │
-            │ Add diary entry     │            │   Title             │
+            │ Add diary entry     │            │                     │
             │ List all diary entries           │   Content           │
             │                    ◄┌────────────┼── Count_words       │
             │                     │            │                     │
@@ -61,23 +61,26 @@ class Diary
   def list_entries
   end
 
-  def reading_time(count_words, wpm, time)
+  def time_to_read_content(count_words, wpm)
+  end
+
+  def reading_time(spare_time)
   end
 
 end
 
 class DiaryEntry
-  def initialize(title, content)
+  def initialize(content)
     ...
   end
 
-  def title
-  end
 
   def contents
+   #return contents
   end
 
-  def count_words
+  def count_words(contents)
+    #return number
   end
 end 
 
@@ -98,7 +101,11 @@ class PhoneNumbers
   list = []
   end
 
-  def add_phone_number
+  def add_phone_number(content list)
+    get content list from diary entry
+    search for phone number
+    extract phone number
+    add to phone number list
   end
 
   def view_phone_number
@@ -112,18 +119,59 @@ Also design the interface of each class in more detail.
 3. Create Examples as Integration Tests
 Create examples of the classes being used together in different situations and combinations that reflect the ways in which the system will be used.
 
-# EXAMPLE
 
-# Gets all tracks
-library = MusicLibrary.new
-track_1 = Track.new("Carte Blanche", "Veracocha")
-track_2 = Track.new("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.all # => [track_1, track_2]
+#1 (add diary entry)
+  entry = Diary.new
+  diary_entry = DiaryEntry.new(content)
+  entry.add(diary_entry)
+  entry.list_entries # => [content]
+
+#2 (get time_to_read_content)
+  entry = Diary.new
+  diary_entry = DiaryEntry.new(content)
+  word_count = diary_entry.count_words
+  time_to_read_content # => num
+
+#3 (add phone number)
+  diary_entry = DiaryEntry.new(content)
+  new_number = PhoneNumbers.new
+  diary_entry.contents
+  diary_entry.add_phone_number 
+  new_number.view_phone_number => list of phone numbers
+
+
 
 4. Create Examples as Unit Tests
 Create examples, where appropriate, of the behaviour of each relevant class at a more granular level of detail.
+
+
+class Diary
+-----------
+
+construct
+
+diary = Diary.new
+diary.list entries => []
+
+diary = Diary.new
+diary.reading_time(time) => []
+
+class DiaryEntry
+----------------
+
+construct
+
+entry = DiaryEntry.new
+entry.contents => []
+
+entry = DiaryEntry.new(contents)
+entry.count_words => number
+
+
+class TodoList
+--------------
+
+# 3 units tests required for this class
 
 # EXAMPLE
 
