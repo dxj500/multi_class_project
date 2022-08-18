@@ -148,8 +148,7 @@ Create examples, where appropriate, of the behaviour of each relevant class at a
 class Diary
 -----------
 
-construct
-
+#construct
 diary = Diary.new
 diary.list entries => []
 
@@ -159,8 +158,7 @@ diary.reading_time(time) => []
 class DiaryEntry
 ----------------
 
-construct
-
+#construct
 entry = DiaryEntry.new
 entry.contents => []
 
@@ -172,6 +170,9 @@ class TodoList
 --------------
 
 # 3 units tests required for this class
+#construct
+
+
 
 # EXAMPLE
 
